@@ -3,8 +3,12 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-  return 'Hello, World!'
+def landing_page():
+  return 'Landing page'
+
+@app.route('/app')
+def main_app():
+  return 'Lecture Manager App'
 
 if __name__ == '__main__':
   app.run()
