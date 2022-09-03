@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def landing_page():
-  return 'Landing page'
+  return 'Landing page example'
 
 @app.route('/app')
 def main_app():
