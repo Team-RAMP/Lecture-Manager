@@ -12,7 +12,7 @@ def landing_page():
 
 @app.route('/app')
 def main_app():
-  return 'Lecture Manager App'
+  return render_template('dashboard.html')
 
 if __name__ == '__main__':
   app.run()
