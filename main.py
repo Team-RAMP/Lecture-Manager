@@ -4,7 +4,7 @@ import os
 project_root = os.path.dirname(__file__)
 static_folder = os.path.join(project_root, 'assets')
 template_path = os.path.join(project_root, 'templates')
-app = Flask(__name__, template_folder=template_path, static_folder=static_folder)
+app = Flask(__name__, template_folder=template_path, static_folder=static_folder, static_url_path='/')
 
 @app.route('/')
 def landing_page():
