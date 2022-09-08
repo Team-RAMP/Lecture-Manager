@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
+import jinja2
 import os
 
 project_root = os.path.dirname(__file__)
@@ -21,6 +22,37 @@ def user_login():
 @app.route('/register')
 def user_registration():
   return render_template('register.html')
+
+@app.route('/forgot-password')
+def forgot_password():
+  return render_template('forgot-password.html')
+
+@app.route('/charts')
+def load_charts_page():
+  return render_template('charts.html')
+
+@app.route('/cards')
+def load_cards_page():
+  return render_template('cards.html')
+
+@app.route('/buttons')
+def load_buttons_page():
+  return render_template('buttons.html')
+
+@app.route('/tables')
+def load_tables_page():
+  return render_template('tables.html')
+
+@app.route('/blank')
+def load_blank_page():
+  return render_template('blank.html')
+
+@app.route('/utilities-<name>')
+def load_utilities_page(name):
+  try:
+    return render_template(f'utilities-{name}.html')
+  except jinja2.exceptions.TemplateNotFound:
+    return abort(404)
 
 @app.errorhandler(404)
 def not_found_handler(e):
