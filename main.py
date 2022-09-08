@@ -22,5 +22,9 @@ def user_login():
 def user_registration():
   return render_template('register.html')
 
+@app.errorhandler(404)
+def not_found_handler(e):
+  return render_template('404.html'), 404
+
 if __name__ == '__main__':
   app.run()
