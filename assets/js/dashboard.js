@@ -1,14 +1,33 @@
-(function($) {
-  "use strict"; // Start of use strict
-
-  // Toggle the side navigation
-  $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
+class SideBar {
+  static toggleUI() {
     $("body").toggleClass("sidebar-toggled");
     $(".sidebar").toggleClass("toggled");
     if ($(".sidebar").hasClass("toggled")) {
-      $('.sidebar .collapse').collapse('hide');
-    };
-  });
+        $('.sidebar .collapse').collapse('hide');
+    }    
+  }
+
+  static toggleState() {
+    localStorage.setItem('was-navbar-visible', localStorage.getItem('was-navbar-visible') != "true");
+  }
+
+  static toggle() {
+    this.toggleState();
+    this.toggleUI();
+  }
+}
+
+(function($) {
+  "use strict"; // Start of use strict  
+
+  if (localStorage.getItem('was-navbar-visible') == "true") {
+      SideBar.toggleUI();
+  }
+
+  // Toggle the side navigation
+  $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
+      SideBar.toggle();
+  });  
 
   // Close any open menu accordions when window is resized below 768px
   $(window).resize(function() {
