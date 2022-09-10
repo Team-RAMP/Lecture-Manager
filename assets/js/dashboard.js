@@ -24,6 +24,14 @@ class SideBar {
       SideBar.toggleUI();
   }
 
+  const param = $(location).attr("pathname");
+
+  $("ul#accordionSidebar>li>a").each(function() {
+    if (param === $(this).attr('href')) {
+      $(this).parent().addClass('active');
+    }    
+  });
+
   // Toggle the side navigation
   $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
       SideBar.toggle();
