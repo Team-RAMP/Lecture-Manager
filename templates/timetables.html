@@ -1,311 +1,641 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
-    <!--  All snippets are MIT license http://bootdey.com/license -->
-    <title>time table - Bootdey.com</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+<title>Table V03</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+
+<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+
+<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+
+<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+<meta name="robots" content="noindex, follow">
+<script nonce="3888544f-c3fb-4137-97aa-435b2f1419a7">(function(w,d){!function(a,e,t,r){a.zarazData=a.zarazData||{};a.zarazData.executed=[];a.zaraz={deferred:[],listeners:[]};a.zaraz.q=[];a.zaraz._f=function(e){return function(){var t=Array.prototype.slice.call(arguments);a.zaraz.q.push({m:e,a:t})}};for(const e of["track","set","debug"])a.zaraz[e]=a.zaraz._f(e);a.zaraz.init=()=>{var t=e.getElementsByTagName(r)[0],z=e.createElement(r),n=e.getElementsByTagName("title")[0];n&&(a.zarazData.t=e.getElementsByTagName("title")[0].text);a.zarazData.x=Math.random();a.zarazData.w=a.screen.width;a.zarazData.h=a.screen.height;a.zarazData.j=a.innerHeight;a.zarazData.e=a.innerWidth;a.zarazData.l=a.location.href;a.zarazData.r=e.referrer;a.zarazData.k=a.screen.colorDepth;a.zarazData.n=e.characterSet;a.zarazData.o=(new Date).getTimezoneOffset();a.zarazData.q=[];for(;a.zaraz.q.length;){const e=a.zaraz.q.shift();a.zarazData.q.push(e)}z.defer=!0;for(const e of[localStorage,sessionStorage])Object.keys(e||{}).filter((a=>a.startsWith("_zaraz_"))).forEach((t=>{try{a.zarazData["z_"+t.slice(7)]=JSON.parse(e.getItem(t))}catch{a.zarazData["z_"+t.slice(7)]=e.getItem(t)}}));z.referrerPolicy="origin";z.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(a.zarazData)));t.parentNode.insertBefore(z,t)};["complete","interactive"].includes(e.readyState)?zaraz.init():a.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,0,"script");})(window,document);</script></head>
 <body>
-<div class="container">
-                <div class="timetable-img text-center">
-                    <img src="img/content/timetable.png" alt="">
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-bordered text-center">
-                        <thead>
-                            <tr class="bg-light-gray">
-                                <th class="text-uppercase">Time
-                                </th>
-                                <th class="text-uppercase">Monday</th>
-                                <th class="text-uppercase">Tuesday</th>
-                                <th class="text-uppercase">Wednesday</th>
-                                <th class="text-uppercase">Thursday</th>
-                                <th class="text-uppercase">Friday</th>
-                                <th class="text-uppercase">Saturday</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="align-middle">09:00am</td>
-                                <td>
-                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13">Dance</span>
-                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
-                                    <div class="font-size13 text-light-gray">Ivana Wong</div>
-                                </td>
-                                <td>
-                                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
-                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
-                                    <div class="font-size13 text-light-gray">Marta Healy</div>
-                                </td>
+<div class="limiter">
+<div class="container-table100">
+<div class="wrap-table100">
+<div class="table100 ver1 m-b-110">
+<table data-vertable="ver1">
+<thead>
+<tr class="row100 head">
+<th class="column100 column1" data-column="column1"></th>
+<th class="column100 column2" data-column="column2">Sunday</th>
+<th class="column100 column3" data-column="column3">Monday</th>
+<th class="column100 column4" data-column="column4">Tuesday</th>
+<th class="column100 column5" data-column="column5">Wednesday</th>
+<th class="column100 column6" data-column="column6">Thursday</th>
+<th class="column100 column7" data-column="column7">Friday</th>
+<th class="column100 column8" data-column="column8">Saturday</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Lawrence Scott</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Jane Medina</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Billy Mitchell</td>
+<td class="column100 column2" data-column="column2">9:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">2:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Beverly Reid</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Tiffany Wade</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Sean Adams</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Rachel Simpson</td>
+<td class="column100 column2" data-column="column2">9:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">2:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Mark Salazar</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table100 ver2 m-b-110">
+<table data-vertable="ver2">
+<thead>
+<tr class="row100 head">
+<th class="column100 column1" data-column="column1"></th>
+<th class="column100 column2" data-column="column2">Sunday</th>
+<th class="column100 column3" data-column="column3">Monday</th>
+<th class="column100 column4" data-column="column4">Tuesday</th>
+<th class="column100 column5" data-column="column5">Wednesday</th>
+<th class="column100 column6" data-column="column6">Thursday</th>
+<th class="column100 column7" data-column="column7">Friday</th>
+<th class="column100 column8" data-column="column8">Saturday</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Lawrence Scott</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Jane Medina</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Billy Mitchell</td>
+<td class="column100 column2" data-column="column2">9:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">2:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Beverly Reid</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Tiffany Wade</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Sean Adams</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Rachel Simpson</td>
+<td class="column100 column2" data-column="column2">9:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">2:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Mark Salazar</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table100 ver3 m-b-110">
+<table data-vertable="ver3">
+<thead>
+<tr class="row100 head">
+<th class="column100 column1" data-column="column1"></th>
+<th class="column100 column2" data-column="column2">Sunday</th>
+<th class="column100 column3" data-column="column3">Monday</th>
+<th class="column100 column4" data-column="column4">Tuesday</th>
+<th class="column100 column5" data-column="column5">Wednesday</th>
+<th class="column100 column6" data-column="column6">Thursday</th>
+<th class="column100 column7" data-column="column7">Friday</th>
+<th class="column100 column8" data-column="column8">Saturday</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Lawrence Scott</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Jane Medina</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Billy Mitchell</td>
+<td class="column100 column2" data-column="column2">9:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">2:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Beverly Reid</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+ <td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Tiffany Wade</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Sean Adams</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Rachel Simpson</td>
+<td class="column100 column2" data-column="column2">9:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">2:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Mark Salazar</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table100 ver4 m-b-110">
+<table data-vertable="ver4">
+<thead>
+<tr class="row100 head">
+<th class="column100 column1" data-column="column1"></th>
+<th class="column100 column2" data-column="column2">Sunday</th>
+<th class="column100 column3" data-column="column3">Monday</th>
+<th class="column100 column4" data-column="column4">Tuesday</th>
+<th class="column100 column5" data-column="column5">Wednesday</th>
+<th class="column100 column6" data-column="column6">Thursday</th>
+<th class="column100 column7" data-column="column7">Friday</th>
+<th class="column100 column8" data-column="column8">Saturday</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Lawrence Scott</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Jane Medina</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Billy Mitchell</td>
+<td class="column100 column2" data-column="column2">9:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">2:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Beverly Reid</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Tiffany Wade</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Sean Adams</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Rachel Simpson</td>
+<td class="column100 column2" data-column="column2">9:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">2:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Mark Salazar</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+ <td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table100 ver5 m-b-110">
+<table data-vertable="ver5">
+<thead>
+<tr class="row100 head">
+<th class="column100 column1" data-column="column1"></th>
+<th class="column100 column2" data-column="column2">Sunday</th>
+<th class="column100 column3" data-column="column3">Monday</th>
+<th class="column100 column4" data-column="column4">Tuesday</th>
+<th class="column100 column5" data-column="column5">Wednesday</th>
+<th class="column100 column6" data-column="column6">Thursday</th>
+<th class="column100 column7" data-column="column7">Friday</th>
+<th class="column100 column8" data-column="column8">Saturday</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Lawrence Scott</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Jane Medina</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Billy Mitchell</td>
+<td class="column100 column2" data-column="column2">9:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">2:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Beverly Reid</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Tiffany Wade</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Sean Adams</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Rachel Simpson</td>
+<td class="column100 column2" data-column="column2">9:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">2:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Mark Salazar</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table100 ver6 m-b-110">
+<table data-vertable="ver6">
+<thead>
+<tr class="row100 head">
+<th class="column100 column1" data-column="column1"></th>
+<th class="column100 column2" data-column="column2">Sunday</th>
+<th class="column100 column3" data-column="column3">Monday</th>
+<th class="column100 column4" data-column="column4">Tuesday</th>
+<th class="column100 column5" data-column="column5">Wednesday</th>
+<th class="column100 column6" data-column="column6">Thursday</th>
+<th class="column100 column7" data-column="column7">Friday</th>
+<th class="column100 column8" data-column="column8">Saturday</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Lawrence Scott</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Jane Medina</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Billy Mitchell</td>
+<td class="column100 column2" data-column="column2">9:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">2:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Beverly Reid</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Tiffany Wade</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Sean Adams</td>
+<td class="column100 column2" data-column="column2">--</td>
+<td class="column100 column3" data-column="column3">5:00 PM</td>
+<td class="column100 column4" data-column="column4">5:00 PM</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">9:00 AM</td>
+<td class="column100 column7" data-column="column7">--</td>
+<td class="column100 column8" data-column="column8">--</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Rachel Simpson</td>
+<td class="column100 column2" data-column="column2">9:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">--</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">2:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+<tr class="row100">
+<td class="column100 column1" data-column="column1">Mark Salazar</td>
+<td class="column100 column2" data-column="column2">8:00 AM</td>
+<td class="column100 column3" data-column="column3">--</td>
+<td class="column100 column4" data-column="column4">--</td>
+<td class="column100 column5" data-column="column5">8:00 AM</td>
+<td class="column100 column6" data-column="column6">--</td>
+<td class="column100 column7" data-column="column7">5:00 PM</td>
+<td class="column100 column8" data-column="column8">8:00 AM</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
 
-                                <td>
-                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
-                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
-                                    <div class="font-size13 text-light-gray">Ivana Wong</div>
-                                </td>
-                                <td>
-                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dance</span>
-                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
-                                    <div class="font-size13 text-light-gray">Ivana Wong</div>
-                                </td>
-                                <td>
-                                    <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Art</span>
-                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
-                                    <div class="font-size13 text-light-gray">Kate Alley</div>
-                                </td>
-                                <td>
-                                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
-                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
-                                    <div class="font-size13 text-light-gray">James Smith</div>
-                                </td>
-                            </tr>
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 
-                            <tr>
-                                <td class="align-middle">10:00am</td>
-                                <td>
-                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
-                                    <div class="margin-10px-top font-size14">10:00-11:00</div>
-                                    <div class="font-size13 text-light-gray">Ivana Wong</div>
-                                </td>
-                                <td class="bg-light-gray">
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-                                </td>
-                                <td>
-                                    <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Art</span>
-                                    <div class="margin-10px-top font-size14">10:00-11:00</div>
-                                    <div class="font-size13 text-light-gray">Kate Alley</div>
-                                </td>
-                                <td>
-                                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
-                                    <div class="margin-10px-top font-size14">10:00-11:00</div>
-                                    <div class="font-size13 text-light-gray">Marta Healy</div>
-                                </td>
-                                <td>
-                                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
-                                    <div class="margin-10px-top font-size14">10:00-11:00</div>
-                                    <div class="font-size13 text-light-gray">James Smith</div>
-                                </td>
-                                <td class="bg-light-gray">
+<script src="vendor/select2/select2.min.js"></script>
 
-                                </td>
-                            </tr>
+<script src="js/main.js"></script>
 
-                            <tr>
-                                <td class="align-middle">11:00am</td>
-                                <td>
-                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
-                                    <div class="margin-10px-top font-size14">11:00-12:00</div>
-                                </td>
-                                <td>
-                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
-                                    <div class="margin-10px-top font-size14">11:00-12:00</div>
-                                </td>
-                                <td>
-                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
-                                    <div class="margin-10px-top font-size14">11:00-12:00</div>
-                                </td>
-                                <td>
-                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
-                                    <div class="margin-10px-top font-size14">11:00-12:00</div>
-                                </td>
-                                <td>
-                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
-                                    <div class="margin-10px-top font-size14">11:00-12:00</div>
-                                </td>
-                                <td>
-                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
-                                    <div class="margin-10px-top font-size14">11:00-12:00</div>
-                                </td>
-                            </tr>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
 
-                            <tr>
-                                <td class="align-middle">12:00pm</td>
-                                <td class="bg-light-gray">
-
-                                </td>
-                                <td>
-                                    <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Art</span>
-                                    <div class="margin-10px-top font-size14">12:00-1:00</div>
-                                    <div class="font-size13 text-light-gray">Kate Alley</div>
-                                </td>
-                                <td>
-                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dance</span>
-                                    <div class="margin-10px-top font-size14">12:00-1:00</div>
-                                    <div class="font-size13 text-light-gray">Ivana Wong</div>
-                                </td>
-                                <td>
-                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
-                                    <div class="margin-10px-top font-size14">12:00-1:00</div>
-                                    <div class="font-size13 text-light-gray">Ivana Wong</div>
-                                </td>
-                                <td class="bg-light-gray">
-
-                                </td>
-                                <td>
-                                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
-                                    <div class="margin-10px-top font-size14">12:00-1:00</div>
-                                    <div class="font-size13 text-light-gray">Marta Healy</div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="align-middle">01:00pm</td>
-                                <td>
-                                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
-                                    <div class="margin-10px-top font-size14">1:00-2:00</div>
-                                    <div class="font-size13 text-light-gray">James Smith</div>
-                                </td>
-                                <td>
-                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
-                                    <div class="margin-10px-top font-size14">1:00-2:00</div>
-                                    <div class="font-size13 text-light-gray">Ivana Wong</div>
-                                </td>
-                                <td class="bg-light-gray">
-
-                                </td>
-                                <td>
-                                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
-                                    <div class="margin-10px-top font-size14">1:00-2:00</div>
-                                    <div class="font-size13 text-light-gray">James Smith</div>
-                                </td>
-                                <td>
-                                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
-                                    <div class="margin-10px-top font-size14">1:00-2:00</div>
-                                    <div class="font-size13 text-light-gray">Marta Healy</div>
-                                </td>
-                                <td>
-                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
-                                    <div class="margin-10px-top font-size14">1:00-2:00</div>
-                                    <div class="font-size13 text-light-gray">Ivana Wong</div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-<style type="text/css">
-body{
-    margin-top:20px;
-}
-.bg-light-gray {
-    background-color: #f7f7f7;
-}
-.table-bordered thead td, .table-bordered thead th {
-    border-bottom-width: 2px;
-}
-.table thead th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6;
-}
-.table-bordered td, .table-bordered th {
-    border: 1px solid #dee2e6;
-}
-
-
-.bg-sky.box-shadow {
-    box-shadow: 0px 5px 0px 0px #a1c3c4
-}
-
-.bg-orange.box-shadow {
-    box-shadow: 0px 5px 0px 0px #bda598
-}
-
-.bg-green.box-shadow {
-    box-shadow: 0px 5px 0px 0px #6cd4f4
-}
-
-.bg-yellow.box-shadow {
-    box-shadow: 0px 5px 0px 0px #e4d995
-}
-
-.bg-pink.box-shadow {
-    box-shadow: 0px 5px 0px 0px #cba7b9
-}
-
-.bg-purple.box-shadow {
-    box-shadow: 0px 5px 0px 0px #8343e8
-}
-
-.bg-lightred.box-shadow {
-    box-shadow: 0px 5px 0px 0px #d84213
-}
-
-
-.bg-sky {
-    background-color: #02c2c7
-}
-
-.bg-orange {
-    background-color: #e95601
-}
-
-.bg-green {
-    background-color: #5bbd2a
-}
-
-.bg-yellow {
-    background-color: #f0d001
-}
-
-.bg-pink {
-    background-color: #ff48a4
-}
-
-.bg-purple {
-    background-color: #9d60ff
-}
-
-.bg-lightred {
-    background-color: #ff5722
-}
-
-.padding-15px-lr {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.padding-5px-tb {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-.margin-10px-bottom {
-    margin-bottom: 10px;
-}
-.border-radius-5 {
-    border-radius: 5px;
-}
-
-.margin-10px-top {
-    margin-top: 10px;
-}
-.font-size14 {
-    font-size: 14px;
-}
-
-.text-light-gray {
-    color: #d6d5d5;
-}
-.font-size13 {
-    font-size: 13px;
-}
-
-.table-bordered td, .table-bordered th {
-    border: 1px solid #dee2e6;
-}
-.table td, .table th {
-    padding: .75rem;
-    vertical-align: top;
-    border-top: 1px solid #dee2e6;
-}
-</style>
-
-<script type="text/javascript">
-
-</script>
+	  gtag('config', 'UA-23581568-13');
+	</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"75692a8c4da5f32b","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.8.1","si":100}' crossorigin="anonymous"></script>
 </body>
 </html>
