@@ -47,6 +47,18 @@ def load_tables_page():
 def load_blank_page():
   return render_template('blank.html')
 
+@app.route('/mark-attendance')
+def load_mark_page():
+  return render_template('mark-attendance.html')
+
+@app.route('/timetables')
+def load_timetables_page():
+  return render_template('timetables.html')
+
+@app.route('/notes')
+def load_notes_page():
+  return render_template('notes.html')
+
 @app.route('/utilities-<name>')
 def load_utilities_page(name):
   try:
