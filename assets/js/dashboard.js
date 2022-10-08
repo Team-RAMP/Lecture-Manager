@@ -1,3 +1,5 @@
+let counter = document.getElementById("counter")
+
 class SideBar {
   static toggleUI() {
     $("body").toggleClass("sidebar-toggled");
@@ -79,5 +81,32 @@ class SideBar {
     }, 1000, 'easeInOutExpo');
     e.preventDefault();
   });
+
+  // Database initialization
+  window.fdb = new ForerunnerDB();
+  window.db = fdb.db('commonsampledb');
+
+  // Do something after the collection gets loaded
+  db.collection('counter').load(function() {
+
+    if (!db.collection('counter').findOne({"count":{'$exists': 'true'}})) {
+        db.collection('counter').setData({"count": 0});
+        db.collection('counter').save();
+        console.log("Created yc");
+    }
+
+    counter.innerHTML = db.collection('counter').findOne({"count":{'$exists': 'true'}})['count'];
+
+    counter.onclick = function () {
+      var c = db.collection('counter').findOne({"count":{'$exists': 'true'}})['count'] + 1;
+        
+      db.collection('counter').setData({'count': c});
+      db.collection('counter').save();
+
+      counter.innerText = c.toString();
+    }
+  });
+  
+
 
 })(jQuery); // End of use strict
