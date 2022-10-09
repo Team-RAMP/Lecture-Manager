@@ -1,0 +1,12 @@
+table {
+    width: 100%;    
+}
+
+.column1 {
+    margin: 0;
+    padding: 0;
+}
+
+/* tr.row100>td {
+    width: fit-content;
+} */

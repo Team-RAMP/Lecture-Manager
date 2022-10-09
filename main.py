@@ -55,6 +55,10 @@ def load_mark_page():
 def load_timetables_page():
   return render_template('timetables.html')
 
+@app.route('/old-timetables')
+def load_old_timetabless():
+  return render_template('timetables-old.html')
+
 @app.route('/notes')
 def load_notes_page():
   return render_template('notes.html')
@@ -65,6 +69,15 @@ def load_utilities_page(name):
     return render_template(f'utilities-{name}.html')
   except jinja2.exceptions.TemplateNotFound:
     return abort(404)
+
+@app.route('/getstarted')
+def load_get_started():
+  return render_template('getstarted.html')
+
+@app.route('/old-timetable')
+def load_old_timetables():
+  return render_template('timetables-old.html')
+
 
 @app.errorhandler(404)
 def not_found_handler(e):
