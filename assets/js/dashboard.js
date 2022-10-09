@@ -86,26 +86,32 @@ class SideBar {
   window.fdb = new ForerunnerDB();
   window.db = fdb.db('commonsampledb');
 
+  db.collection('timetables').load(function() {
+    if (db.collection('timetables').find().length == 0) {
+      window.location.href = "/getstarted";
+    }
+  })
+
   // Do something after the collection gets loaded
-  db.collection('counter').load(function() {
+  // db.collection('counter').load(function() {
 
-    if (!db.collection('counter').findOne({"count":{'$exists': 'true'}})) {
-        db.collection('counter').setData({"count": 0});
-        db.collection('counter').save();
-        console.log("Created yc");
-    }
+  //   if (!db.collection('counter').findOne({"count":{'$exists': 'true'}})) {
+  //       db.collection('counter').setData({"count": 0});
+  //       db.collection('counter').save();
+  //       console.log("Created yc");
+  //   }
 
-    counter.innerHTML = db.collection('counter').findOne({"count":{'$exists': 'true'}})['count'];
+  //   counter.innerHTML = db.collection('counter').findOne({"count":{'$exists': 'true'}})['count'];
 
-    counter.onclick = function () {
-      var c = db.collection('counter').findOne({"count":{'$exists': 'true'}})['count'] + 1;
+  //   counter.onclick = function () {
+  //     var c = db.collection('counter').findOne({"count":{'$exists': 'true'}})['count'] + 1;
         
-      db.collection('counter').setData({'count': c});
-      db.collection('counter').save();
+  //     db.collection('counter').setData({'count': c});
+  //     db.collection('counter').save();
 
-      counter.innerText = c.toString();
-    }
-  });
+  //     counter.innerText = c.toString();
+  //   }
+  // });
   
 
 

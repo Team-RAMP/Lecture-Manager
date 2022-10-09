@@ -6,7 +6,7 @@
     <title>Dashboard</title>
 </head>
 
-<body id="page-top" class="sidebar-toggled">
+<body id="page-top" class="sidebar-toggled" onload="onload()">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -25,6 +25,7 @@
                 {% include 'navbar.html' %}
                 <!-- End of Topbar -->
 
+                <div id="content"></div>
 				
                 
                 <!-- /.container-fluid -->
@@ -80,8 +81,6 @@
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/dashboard.js"></script>
 
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
@@ -89,6 +88,10 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/dashboard.js"></script>
+    <script src="js/timetables.js"></script>
 
 </body>
 

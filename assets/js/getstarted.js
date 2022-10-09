@@ -1,17 +1,20 @@
 var allInputs;
 var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+var subjects = [];
 var start_hour = 8;
 
-function onload() {
-
-    var subjects = [];
-    
+function onload() {    
     allInputs = document.getElementsByTagName('input');
     var dataList = document.getElementById('subjects');
+
+    window.fdb = new ForerunnerDB();
+    window.db = fdb.db('commonsampledb');
 
     Array.prototype.forEach.call(allInputs, function(input) {
 
         input.addEventListener("focusout", function() {
+
+            input.value = input.value.toUpperCase()
 
             if (subjects.includes(input.value)) return;
 
@@ -25,17 +28,42 @@ function onload() {
 }
 
 function proceedWithTimetable() {
-    var data = new Map();
+
+    var data = {};
+
     Array.prototype.forEach.call(allInputs, function(input) {
         var day_no = input.parentElement.getAttribute('data-column').match(/\d/g)[0];
         var day = days[parseInt(day_no)-2];
 
-        if (!data.has(day)) data.set(day, new Map());
-        var sh = start_hour + data.get(day).size;
-        data.get(day).set(sh, input.value);
+        if (data[day] == undefined) data[day] = {};
+        var sh = start_hour + Object.keys(data[day]).length;
+        data[day][sh] = input.value;
     });
+
     console.log(data);
-    
+
+    db.collection('timetables').load(function() {
+        if (db.collection('timetables').find().length == 0) {
+            const res = db.collection('timetables').insert({"_id": "timetable", "days": {data}, "subjects": subjects})
+            if (res.inserted.length == 1) {
+                db.collection('timetables').save()
+                alert("Done. Proceeding to dashboard!")
+                window.location.href = "/timetables";
+            } else {
+                alert("An unexpected error occurred while adding timetable to db")
+            }
+        } else {
+            const res = db.collection('timetables').update({}, {"_id": "timetable", "days": {data}, "subjects": subjects})
+            if (res.length == 1) {
+                db.collection('timetables').save()
+                alert("Updated. Proceeding to dashboard!")
+                window.location.href = "/timetables";
+            } else {
+                alert("An unexpected error occurred while updating timetable to db")
+            }
+        }
+    })
+
 }
 
 // var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]

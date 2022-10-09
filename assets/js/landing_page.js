@@ -238,4 +238,12 @@
     });
   });
 
+  window.fdb = new ForerunnerDB();
+  window.db = fdb.db('commonsampledb');
+
+  db.collection('timetables').load(function(){
+    if (db.collection('timetables').find().length != 0) {
+      document.getElementById("dashboard-menu-item").hidden = false
+    }
+  })
 })()
