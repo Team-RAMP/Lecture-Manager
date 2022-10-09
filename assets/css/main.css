@@ -15,12 +15,12 @@ button:hover{cursor:pointer}iframe{border:none!important}
 .limiter{width:100%;margin:0 auto}
 .container-table100{width:100%;min-height:100vh;background-color:white;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;padding:33px 30px}
 .wrap-table100{width:1300px}
-table{width:100%;background-color:#fff; border-color: #4e73df; border-radius: 1px;}
+table{width:100%;background-color:lightgray#fff; border-color: #4e73df; border-radius: 1px;}
 th,td{font-weight:unset;padding-right:10px}
 .column100{width:130px;padding-left:25px}
 .column100.column1{width:265px;padding-left:42px}
 .row100.head th{padding-top:24px;padding-bottom:20px}
-.row100 td{padding-top:18px;padding-bottom:14px}
+.row100 td{padding-top:18px;padding-bottom:14px;border-color: black;}
 .table100.ver1 td{font-family:Montserrat-Regular;font-size:14px;color:Black;line-height:1.4}
 .table100.ver1 th{font-family:Montserrat-Medium;font-size:12px;color:white;line-height:1.4;text-transform:uppercase;background-color:#36304a}
 .table100.ver1 .row100:hover{background-color:#f2f2f2}
@@ -34,8 +34,8 @@ th,td{font-weight:unset;padding-right:10px}
 .table100.ver2 .hov-column-head-ver2{background-color:#484848!important}
 .table100.ver2 .row100 td:hover{background-color:#4e73df;color:#fff}
 .table100.ver2 tbody tr:nth-child(even){background-color:white}
-.table100.ver2 td{font-family:Montserrat-Regular;font-size:14px;color:white;line-height:1.4}
-.table100.ver2 th{font-family:Montserrat-Medium;font-size:12px;color:#fff;line-height:1.4;text-transform:uppercase;background-color:#333}
+.table100.ver2 td{font-family:Montserrat-Regular;font-size:14px;color: black;background-color: offwhite;line-height:1.4}
+.table100.ver2 th{font-family:Montserrat-Medium;font-size:12px;color:#fff;line-height:1.4;text-transform:uppercase;background-color:#4e73df}
 .table100.ver2 .row100:hover td{background-color:#4e73df;color:#fff}
 .table100.ver2 .hov-column-ver2{background-color:white;color:#fff}
 .table100.ver2 .hov-column-head-ver2{background-color:#484848!important}
