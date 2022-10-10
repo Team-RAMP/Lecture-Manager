@@ -1,14 +1,19 @@
 table {
-    width: 100%;   
-    border: 1; 
+    width: 100%;    
+    margin-bottom: 0%;
 }
 
-.column1 {
+.column100 {
     margin: 0;
     padding: 0;
+    border-color: lightgray;
+    border-bottom-width: 1px;
+}
+
+.btn{
+    margin-top: 0px;
 }
 
 /* tr.row100>td {
     width: fit-content;
 } */
-

@@ -23,6 +23,9 @@ function construct_table(timetable_div, timetable_data) {
     var tableHead = document.createElement('THEAD');
     table.appendChild(tableHead);
 
+    var th = document.createElement('TH');
+    tableHead.appendChild(th);
+
     Array.prototype.forEach.call(days, function(day) {
         var th = document.createElement('TH');
         tableHead.appendChild(th);
