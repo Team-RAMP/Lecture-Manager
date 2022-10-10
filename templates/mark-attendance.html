@@ -5,38 +5,8 @@
     {% include 'cheader_content.html' %}
     <title>Timely: Mark Attendance</title>
 
-    <link href='fullcalendar/main.css' rel='stylesheet' />
-    <script src='fullcalendar/main.js'></script>
-    <script>
-
-    document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      timeZone: 'UTC',
-      initialView: 'listWeek',
-
-      // customize the button names,
-      // otherwise they'd all just say "list"
-      views: {
-        listDay: { buttonText: 'list day' },
-        listWeek: { buttonText: 'list week' },
-        listMonth: { buttonText: 'list month' }
-      },
-
-      headerToolbar: {
-        left: 'title',
-        center: '',
-        right: 'listDay,listWeek,listMonth'
-      },
-      events: 'https://fullcalendar.io/api/demo-feeds/events.json'
-    });
-
-    calendar.render();
-  });
-
-    </script>
-
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.min.css' rel='stylesheet' />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js'></script>
 <style>
 
     html, body {
@@ -53,14 +23,12 @@
 
   </style>
 
-
-
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
 
 </head>
 
-<body id="page-top" class="sidebar-toggled">
+<body onload="onload()" id="page-top" class="sidebar-toggled">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -144,33 +112,7 @@
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-        timeZone: 'UTC',
-        initialView: 'listWeek',
-
-    // customize the button names,
-    // otherwise they'd all just say "list"
-    views: {
-      listDay: { buttonText: 'list day' },
-      listWeek: { buttonText: 'list week' },
-      listMonth: { buttonText: 'list month' }
-    },
-
-    headerToolbar: {
-      left: 'title',
-      center: '',
-      right: 'listDay,listWeek,listMonth'
-    },
-    events: 'https://fullcalendar.io/api/demo-feeds/events.json'
-  });
-
-  calendar.render();
-});
-    </script>
+    <script src="js/markattendance.js"></script>
 
 </body>
 
