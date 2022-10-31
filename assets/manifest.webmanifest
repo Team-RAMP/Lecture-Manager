@@ -1,0 +1,56 @@
+{
+    "lang": "en",
+    "dir": "ltr",
+    "name": "Timely: Lecture Manager",
+    "short_name": "Timely",
+    "icons": [
+        {
+          "src": "icon/timely-logo-48-48.webp",
+          "sizes": "48x48",
+          "type": "image/webp"
+        },
+        {
+          "src": "icon/timely-logo-48-48",
+          "sizes": "48x48"
+        },
+        {
+          "src": "icon/timely-logo.ico",
+          "sizes": "72x72 96x96 128x128 256x256"
+        },
+        {
+          "src": "img/timely-logo.svg",
+          "sizes": "257x257",
+          "type": "image/svg+xml"
+        }
+    ],
+    "scope": "/",
+    "id": "team.ramp.timely",
+    "start_url": "/app",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "white",
+    "background_color": "white",
+    "shortcuts": [
+        {
+          "name": "Mark Attendance",
+          "description": "Mark your lecture attendance for today",
+          "url": "/mark-attendance",
+          "icons": [
+            {
+              "src": "/icon/timely-logo.svg",
+              "type": "image/svg+xml"
+            }
+          ]
+        },
+        {
+          "name": "View timetable",
+          "description": "View your current timetable",
+          "url": "/current-timetable"
+        },
+        {
+            "name": "Search Notes",
+            "description": "Quickly lookup the notes you wish to access",
+            "url": "/notes"
+        }
+    ]
+  }
