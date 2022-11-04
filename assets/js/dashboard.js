@@ -22,6 +22,10 @@ class SideBar {
 (function($) {
   "use strict"; // Start of use strict  
 
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+
   if (localStorage.getItem('was-navbar-visible') == "true") {
       SideBar.toggleUI();
   }
