@@ -3,26 +3,34 @@
     "dir": "ltr",
     "name": "Timely: Lecture Manager",
     "short_name": "Timely",
+    "description": "A personalized attendance and notes management app that makes tracking your attendance and querying and managing your notes much more easier and efficient.",
+    "categories": ["attendance", "notes", "personalization", "management", "tracking", "schedule"],
     "icons": [
         {
-          "src": "icon/timely-logo-48-48.webp",
-          "sizes": "48x48",
-          "type": "image/webp"
+          "src": "icon/manifest-icon-192.maskable.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
         },
         {
-          "src": "icon/timely-logo-48-48",
-          "sizes": "48x48"
+          "src": "icon/manifest-icon-192.maskable.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "maskable"
         },
         {
-          "src": "icon/timely-logo.ico",
-          "sizes": "72x72 96x96 128x128 256x256"
+          "src": "icon/manifest-icon-512.maskable.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
         },
         {
-          "src": "img/timely-logo.svg",
-          "sizes": "257x257",
-          "type": "image/svg+xml"
+          "src": "icon/manifest-icon-512.maskable.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "maskable"
         }
-    ],
+      ],
     "scope": "/",
     "id": "team.ramp.timely",
     "start_url": "/app",
@@ -32,8 +40,8 @@
     "background_color": "white",
     "shortcuts": [
         {
-          "name": "Mark Attendance",
-          "description": "Mark your lecture attendance for today",
+          "name": "Mark your attendance",
+          "description": "Mark your attendance for the day",
           "url": "/mark-attendance",
           "icons": [
             {
@@ -45,12 +53,24 @@
         {
           "name": "View timetable",
           "description": "View your current timetable",
-          "url": "/current-timetable"
+          "url": "/current-timetable",
+          "icons": [
+            {
+              "src": "/icon/timely-logo.svg",
+              "type": "image/svg+xml"
+            }
+          ]
         },
         {
             "name": "Search Notes",
             "description": "Quickly lookup the notes you wish to access",
-            "url": "/notes"
+            "url": "/notes",
+            "icons": [
+              {
+                "src": "/icon/timely-logo.svg",
+                "type": "image/svg+xml"
+              }
+            ]
         }
     ]
   }
