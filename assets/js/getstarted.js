@@ -4,6 +4,11 @@ var subjects = [];
 var start_hour = 8;
 
 function onload() {    
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js');
+    }
+
     allInputs = document.getElementsByTagName('input');
     var dataList = document.getElementById('subjects');
 
