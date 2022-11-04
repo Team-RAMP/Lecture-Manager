@@ -246,4 +246,8 @@
       document.getElementById("dashboard-menu-item").hidden = false
     }
   })
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
 })()
