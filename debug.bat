@@ -1,2 +1,2 @@
 @echo off
-python -m flask --app main --debug run
+python -m flask --app wsgi:app --debug run
