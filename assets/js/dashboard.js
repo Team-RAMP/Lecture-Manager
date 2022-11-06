@@ -90,11 +90,14 @@ class SideBar {
   window.fdb = new ForerunnerDB();
   window.db = fdb.db('commonsampledb');
 
-  db.collection('timetables').load(function() {
-    if (db.collection('timetables').find().length == 0) {
-      window.location.href = "/getstarted";
-    }
-  })
+  // Redirect to get started page if no timetable is found
+  // db.collection('timetables').load(function() {
+  //   if (db.collection('timetables').find().length == 0) {
+  //     window.location.href = "/getstarted";
+  //   }
+  // })
+
+  
 
   // Do something after the collection gets loaded
   // db.collection('counter').load(function() {

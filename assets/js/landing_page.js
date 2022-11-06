@@ -4,6 +4,15 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+});
+
+
 (function() {
   "use strict";
 
@@ -250,4 +259,29 @@
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
   }
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+  
+    const mainAction = document.querySelector("#main-action");
+    const mainActionLoader = document.querySelector("#main-action-loader");
+  
+    mainActionLoader.hidden = true;
+  
+    mainAction.textContent = "Install";
+    mainAction.hidden = false;
+  
+    mainAction.addEventListener("click", (e) => {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === "accepted") {
+          console.log("User accepted the A2HS prompt");
+        } else {
+          console.log("User dismissed the A2HS prompt");
+        }
+        deferredPrompt = null;
+      });
+    });
+  });  
 })()

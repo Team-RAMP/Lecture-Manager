@@ -1,5 +1,5 @@
 var allInputs;
-var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var subjects = [];
 var start_hour = 8;
 
@@ -29,7 +29,10 @@ function onload() {
             dataList.appendChild(option);
         });
     });
-    
+
+    $("#start-datepicker").datepicker({dateFormat: "dd-mm-yy"}).datepicker("setDate",'now');
+
+    $("#end-datepicker").datepicker({dateFormat: "dd-mm-yy"});
 }
 
 function proceedWithTimetable() {
@@ -37,28 +40,39 @@ function proceedWithTimetable() {
     var data = {};
 
     Array.prototype.forEach.call(allInputs, function(input) {
-        var day_no = input.parentElement.getAttribute('data-column').match(/\d/g)[0];
-        var day = days[parseInt(day_no)-2];
 
-        if (data[day] == undefined) data[day] = {};
-        var sh = start_hour + Object.keys(data[day]).length;
-        data[day][sh] = input.value;
+        if (input.classList.contains('hasDatepicker')) return;
+
+        var day_no = input.parentElement.getAttribute('data-column').match(/\d/g)[0];
+
+        if (data[day_no] == undefined) data[day_no] = {};
+        var sh = start_hour + Object.keys(data[day_no]).length;
+        data[day_no][sh] = input.value;
     });
 
     console.log(data);
 
+    var sdData = $("#start-datepicker").val().split('-');
+    var startDate = new Date(sdData[2], sdData[1] - 1, sdData[0]);
+
+    var edData = $("#end-datepicker").val().split('-');
+    var endDate = new Date(edData[2], edData[1] - 1, edData[0]);
+    
     db.collection('timetables').load(function() {
         if (db.collection('timetables').find().length == 0) {
             const res = db.collection('timetables').insert({"_id": "timetable", "days": {data}, "subjects": subjects})
             if (res.inserted.length == 1) {
-                db.collection('timetables').save()
-
-                generateLectures(function() {
-                    alert("Done. Proceeding to dashboard!")
-                    window.location.href = "/timetables";
-                })
-                
-                
+                db.collection('timetables').save();
+                generateLectures(
+                    startDate,
+                    endDate,
+                    0,
+                    function () {
+                        alert("Done. Proceeding to dashboard!")
+                        window.location.href = "/timetables"; 
+                    }
+                );
+                           
             } else {
                 alert("An unexpected error occurred while adding timetable to db")
             }
@@ -66,11 +80,17 @@ function proceedWithTimetable() {
             const res = db.collection('timetables').update({}, {"_id": "timetable", "days": {data}, "subjects": subjects})
             if (res.length == 1) {
                 db.collection('timetables').save()
-                generateLectures(function() {
-                    alert("Updated. Proceeding to dashboard!")
-                    window.location.href = "/timetables";
-                })
-                
+                generateLectures(
+                    startDate,
+                    endDate,
+                    0,
+                    function () {
+                        alert("Updated. Proceeding to dashboard!")
+                        window.location.href = "/timetables";
+                    }
+                );
+
+
             } else {
                 alert("An unexpected error occurred while updating timetable to db")
             }
@@ -79,51 +99,64 @@ function proceedWithTimetable() {
 
 }
 
-function generateLectures(done) {
-    db.collection('lectures').load(function() {
-        var timetableData = db.collection('timetables').find()[0].days.data;
-        const cDate = new Date();
-        const cDIndex = cDate.getDay()-1;
+function generateLectures(start, end, timetableID, done) {
 
-        var lectures = [];
+        var currentDate = new Date(start);
+    
+        db.collection("lectures").load(function() {
 
-        for(var day in timetableData) {
-            var dayIndex = days.indexOf(day);
-            if (dayIndex >= cDIndex) {
-                    var offset = dayIndex - cDIndex;
+            console.log("End Date: " + end);
 
-                    var timetableDataDay = timetableData[day];
-                    for(var startTime in timetableDataDay) {
-                        var subject = timetableDataDay[startTime];
+            // Clear lectures collection
+            db.collection("lectures").remove();
+            db.collection("lectures").save();
 
+            var timetableData = db.collection('timetables').find()[timetableID].days.data;
+            
+            end.setDate(end.getDate() + 1);
+
+            while(currentDate.getDate() != end.getDate()) {
+
+                currentDate.setDate(currentDate.getDate() + 1);
+
+                // console.log("Date: " + startDT + "\n" + "Day: " + currentDate.getDay())
+
+                const timetableDayData = timetableData[currentDate.getDay()];
+        
+                if (timetableDayData != undefined) {
+    
+                    for(var startTime in timetableDayData) {
+    
+                        var subject = timetableDayData[startTime];
+    
+                        if (!subject || subject == '') continue;
+    
                         var startDT = new Date();
-                        startDT.setUTCDate(startDT.getUTCDate()+offset);
+                        startDT.setUTCDate(currentDate.getUTCDate());
                         startDT.setUTCHours(startTime);
                         startDT.setUTCMinutes(0, 0, 0);
 
+                        console.log("startDT: " + startDT);
+
+    
                         var endDT = new Date(startDT.getTime());
                         endDT.setUTCHours(endDT.getUTCHours() + 1);
-
-                        lectures.push({
+    
+                        db.collection("lectures").insert({
                             "title": subject,
                             "subject": subject,
                             "start": startDT,
                             "end": endDT,
-                            "attendance": "absent"                             
+                            "attended": false                             
                         });
                     }
+                }
+    
             }
-        }
-        db.collection("samplesample").load(function() {
-            db.collection("samplesample").remove();
-            Array.prototype.forEach.call(lectures, function(lecture) {
-                console.log(lecture);
-                db.collection("samplesample").insert(lecture);
-            });
-            db.collection("samplesample").save();
+    
+            db.collection("lectures").save();
             done();
-        });
-    });
+      });
 }
 
 // var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]

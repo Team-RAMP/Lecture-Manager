@@ -5,8 +5,12 @@
     <title>Table V03</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff" />
 
-    <link rel="icon" type="image/svg+xml" href="/img/timely-logo.svg" />
+    <!-- Fallback application metadata for legacy browsers -->
+    <link rel="icon" sizes="16x16 32x32 48x48" href="/icon/timely-logo.svg">
+    <link rel="icon" sizes="512x512" href="/icon/timely-logo.svg">
+    <link rel="apple-touch-icon" href="/icon/timely-logo.svg"/>
 
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 
@@ -24,8 +28,6 @@
     <link rel="stylesheet" type="text/css" href="css/getstarted.css">
 
     <meta name="robots" content="noindex, follow">
-    <script
-        nonce="3888544f-c3fb-4137-97aa-435b2f1419a7">(function (w, d) { !function (a, e, t, r) { a.zarazData = a.zarazData || {}; a.zarazData.executed = []; a.zaraz = { deferred: [], listeners: [] }; a.zaraz.q = []; a.zaraz._f = function (e) { return function () { var t = Array.prototype.slice.call(arguments); a.zaraz.q.push({ m: e, a: t }) } }; for (const e of ["track", "set", "debug"]) a.zaraz[e] = a.zaraz._f(e); a.zaraz.init = () => { var t = e.getElementsByTagName(r)[0], z = e.createElement(r), n = e.getElementsByTagName("title")[0]; n && (a.zarazData.t = e.getElementsByTagName("title")[0].text); a.zarazData.x = Math.random(); a.zarazData.w = a.screen.width; a.zarazData.h = a.screen.height; a.zarazData.j = a.innerHeight; a.zarazData.e = a.innerWidth; a.zarazData.l = a.location.href; a.zarazData.r = e.referrer; a.zarazData.k = a.screen.colorDepth; a.zarazData.n = e.characterSet; a.zarazData.o = (new Date).getTimezoneOffset(); a.zarazData.q = []; for (; a.zaraz.q.length;) { const e = a.zaraz.q.shift(); a.zarazData.q.push(e) } z.defer = !0; for (const e of [localStorage, sessionStorage]) Object.keys(e || {}).filter((a => a.startsWith("_zaraz_"))).forEach((t => { try { a.zarazData["z_" + t.slice(7)] = JSON.parse(e.getItem(t)) } catch { a.zarazData["z_" + t.slice(7)] = e.getItem(t) } })); z.referrerPolicy = "origin"; z.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a.zarazData))); t.parentNode.insertBefore(z, t) };["complete", "interactive"].includes(e.readyState) ? zaraz.init() : a.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, 0, "script"); })(window, document);</script>
 </head>
 
 <body onload="onload()">
@@ -175,12 +177,23 @@
                     </table>
                 </div>
                 <datalist id="subjects"></datalist>
+
+                <p>
+                    Semester duration:
+                    <input type="text" id="start-datepicker" style="display: inline-block;"/>
+                    to
+                    <input type="text" id="end-datepicker" style="display: inline-block;"/>
+                </p><br>
             </div>
+
             <button type="button" class="btn btn-primary btn-lg" onclick="proceedWithTimetable()">Continue with this timetable</button>
         </div>
     </div>
 
-    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
     <script src="vendor/bootstrap/js/popper.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -188,23 +201,7 @@
     <script src="vendor/select2/select2.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/forerunnerdb/2.0.22/fdb-all.min.js"></script>
-    <script src="js/getstarted.js"></script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-23581568-13');
-    </script>
-    <script defer
-        src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"
-        integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
-        data-cf-beacon='{"rayId":"75692a8c4da5f32b","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.8.1","si":100}'
-        crossorigin="anonymous"></script>
-
-        
+    <script src="js/getstarted.js"></script>       
 </body>
 
 </html>

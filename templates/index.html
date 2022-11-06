@@ -6,6 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Timely</title>
+  <meta name="theme-color" content="#fff" />
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -26,8 +27,9 @@
   <link rel="manifest" href="manifest.webmanifest">
 
   <!-- Fallback application metadata for legacy browsers -->
-  <link rel="icon" sizes="16x16 32x32 48x48" href="icon/timely-logo.svg">
-  <link rel="icon" sizes="512x512" href="icon/timely-logo.svg">
+  <link rel="icon" sizes="16x16 32x32 48x48" href="/icon/timely-logo.svg">
+  <link rel="icon" sizes="512x512" href="/icon/timely-logo.svg">
+  <link rel="apple-touch-icon" href="/icon/timely-logo.svg"/>
 </head>
 
 <body>
@@ -48,7 +50,13 @@
           <li><a class="nav-link scrollto" href="#features">Features</a></li>
           <li id="dashboard-menu-item" hidden><a class="nav-link scrollto" href="/app">Dashboard</a></li>          
           <!-- <li><a class="nav-link scrollto" href="login.html">Login</a></li> -->
-          <li><a class="getstarted scrollto" href="/getstarted">Get Started</a></li>
+          <li>
+            <a class="getstarted scrollto" href="/getstarted">
+              <!-- <div id="main-action-loader" class="spinner-border spinner-border-sm text-light" role="status"></div> -->
+              <div id="main-action">Get Started</div>
+            </a>
+          </li>
+            <!-- <a href="/app" target='_blank'>Open PWA</a> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
