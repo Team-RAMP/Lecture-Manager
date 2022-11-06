@@ -16,8 +16,17 @@ table {
     width: 30em;
     height: 20em;
     text-align: center;
+
     border-width: 0em;
+    border-color:  #224abe;
+
 }
+
+table td:hover{
+    background-color: #224abe;
+    color: white;
+}
+
 
 .table th{
 
