@@ -10,7 +10,7 @@
     <!-- Fallback application metadata for legacy browsers -->
     <link rel="icon" sizes="16x16 32x32 48x48" href="/icon/timely-logo.svg">
     <link rel="icon" sizes="512x512" href="/icon/timely-logo.svg">
-    <link rel="apple-touch-icon" href="/icon/timely-logo.svg"/>
+    <link rel="apple-touch-icon" href="/icon/timely-logo.svg" />
 
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 
@@ -32,7 +32,14 @@
 
 <body onload="onload()">
     <div class="limiter">
+
+        <p style="float: left; padding-left: 32px; padding-top: 16px;">
+            <label style="display: inline-block;" for="username-field">Username: </label>
+            <input style="display: inline-block;" class="main-input-field" id="username-field" type="text" />
+        </p>
+
         <div class="container-table100">
+
             <div class="wrap-table100">
                 <div class="table100 ver2 m-b-110">
                     <table data-vertable="ver2">
@@ -178,15 +185,202 @@
                 </div>
                 <datalist id="subjects"></datalist>
 
-                <p>
-                    Semester duration:
-                    <input type="text" id="start-datepicker" style="display: inline-block;"/>
-                    to
-                    <input type="text" id="end-datepicker" style="display: inline-block;"/>
-                </p><br>
+                <center>
+                    <p>
+                        Semester duration:
+                        <input type="text" class="main-input-field" id="start-datepicker"
+                            style="display: inline-block;" />
+                        to
+                        <input type="text" class="main-input-field" id="end-datepicker"
+                            style="display: inline-block;" />
+                    </p>
+                </center>
+                <br>
+                <br>
             </div>
 
-            <button type="button" class="btn btn-primary btn-lg" onclick="proceedWithTimetable()">Continue with this timetable</button>
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col text-center">
+                        <a href="#" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#largeModal"
+                            hidden>Click to open Modal</a>
+                    </div>
+                </div>
+
+                <!-- modal -->
+                <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div id="dialog-main-carousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div id="dialog-page-1" class="carousel-item active">
+                                    <div>
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+
+                                                <center>
+                                                    <b class="modal-title">Welcome to Timely!</b>
+                                                    <p class="modal-subtitle">Your personalized attendance tracking and
+                                                        notes management app</p>
+                                                </center>
+                                                <br>
+                                                <!-- carousel -->
+                                                <div id='carouselExampleIndicators' class='carousel slide'
+                                                    data-ride='carousel'>
+                                                    <ol class='carousel-indicators'>
+                                                        <li data-target='#carouselExampleIndicators' data-slide-to='0'
+                                                            class='active'></li>
+                                                        <li data-target='#carouselExampleIndicators' data-slide-to='1'>
+                                                        </li>
+                                                        <li data-target='#carouselExampleIndicators' data-slide-to='2'>
+                                                        </li>
+                                                    </ol>
+
+                                                    <div class='carousel-inner'>
+                                                        <div class='carousel-item active'>
+                                                            <!-- <img class='img-size' src='https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1391&q=80' alt='First slide' /> -->
+                                                            <center>
+                                                                <div class="carousel-item-content">
+                                                                    Page 1
+                                                                </div>
+                                                            </center>
+                                                        </div>
+                                                        <div class='carousel-item'>
+                                                            <center>
+                                                                <div class="carousel-item-content">
+                                                                    Page 2
+                                                                </div>
+                                                            </center>
+                                                        </div>
+                                                        <div class='carousel-item'>
+                                                            <center>
+                                                                <div class="carousel-item-content">
+                                                                    Page 3
+                                                                </div>
+                                                            </center>
+                                                        </div>
+                                                        <div class='carousel-item'>
+                                                            <center>
+                                                                <div class="carousel-item-content">
+                                                                    Page 4
+                                                                </div>
+                                                            </center>
+                                                        </div>
+                                                        <div class='carousel-item'>
+                                                            <center>
+                                                                <div class="carousel-item-content">
+                                                                    Page 5
+                                                                </div>
+                                                            </center>
+                                                        </div>
+                                                    </div>
+
+                                                    <a class='carousel-control-prev' href='#carouselExampleIndicators'
+                                                        role='button' data-slide='prev'>
+                                                        <span class='carousel-control-prev-icon'
+                                                            aria-hidden='true'></span>
+                                                        <span class='sr-only'></span>
+                                                    </a>
+                                                    <a class='carousel-control-next' href='#carouselExampleIndicators'
+                                                        role='button' data-slide='next'>
+                                                        <span class='carousel-control-next-icon'
+                                                            aria-hidden='true'></span>
+                                                        <span class='sr-only'></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <center>
+                                                <button id="modal-proceed" style="width: 100%;" type="button"
+                                                    class="btn btn-primary">Proceed</button>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="dialog-page-2" class="carousel-item">
+                                    <div>
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <b class="modal-title">Getting started</b>
+                                                <p class="modal-subtitle">A few steps before you completely get
+                                                    started with Timely</p>
+
+                                                <!-- Main Body -->
+                                                <div>
+                                                    <div class="form-group">
+                                                        <label for="username" class="modal-menu-item">A short name for yourself in the app</p>
+                                                            <input type="name" class="form-control" id="username" aria-describedby="nameHelp"
+                                                                placeholder="Your nickname">
+                                                            <small id="nameHelp" class="form-text text-muted">All your
+                                                                data gets stored locally on your device, unless
+                                                                explicitly shared.</small>
+                                                    </div>
+
+                                                    <div id="days-section">
+
+                                                        <p class="modal-menu-item">Days to be included in your first
+                                                            timetable</p>
+
+                                                        <input type="checkbox" class="dayschip" id="mondaychip"
+                                                            checked="true" />
+                                                        <label for="mondaychip">Monday</label>
+
+                                                        <input type="checkbox" class="dayschip" id="tuesdaychip"
+                                                            checked="true" />
+                                                        <label for="tuesdaychip">Tuesday</label>
+
+                                                        <input type="checkbox" class="dayschip" id="wednesdaychip"
+                                                            checked="true" />
+                                                        <label for="wednesdaychip">Wednesday</label>
+
+                                                        <input type="checkbox" class="dayschip" id="thursdaychip"
+                                                            checked="true" />
+                                                        <label for="thursdaychip">Thursday</label>
+
+                                                        <input type="checkbox" class="dayschip" id="fridaychip"
+                                                            checked="true" />
+                                                        <label for="fridaychip">Friday</label>
+
+                                                        <input type="checkbox" class="dayschip" id="saturdaychip" />
+                                                        <label for="saturdaychip">Saturday</label>
+
+                                                        <input type="checkbox" class="dayschip" id="sundaychip" />
+                                                        <label for="sundaychip">Sunday</label>
+                                                    </div>
+
+                                                    <div id="time-slot-section">
+                                                        <p class="modal-menu-item">Design time slots for the new timetable</p>
+                                                        <div class="form-group">
+                                                            <input type="name" class="form-control" id="username" aria-describedby="nameHelp" placeholder="Your nickname">
+                                                            <div>
+                                                                    
+                                                                    
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-check form-switch">
+                                                        <label>Allow local alerts from the Timely app</label>
+                                                        <input type="checkbox" class="form-check-input" type="checkbox"
+                                                            checked data-toggle="toggle" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <center>
+                                                <button id="modal-proceed-2" style="width: 100%;" type="button"
+                                                    class="btn btn-primary">Proceed</button>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-lg" onclick="proceedWithTimetable()">Continue with this
+                timetable</button>
         </div>
     </div>
 
@@ -201,7 +395,7 @@
     <script src="vendor/select2/select2.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/forerunnerdb/2.0.22/fdb-all.min.js"></script>
-    <script src="js/getstarted.js"></script>       
+    <script src="js/getstarted.js"></script>
 </body>
 
 </html>

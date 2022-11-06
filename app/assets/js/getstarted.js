@@ -5,6 +5,14 @@ var start_hour = 8;
 
 function onload() {    
 
+    $('#largeModal').modal({backdrop: 'static', keyboard: false}, 'show');
+
+    document.getElementById("modal-proceed").onclick = function(e) {
+        console.log("Clicked!");
+        document.getElementById("dialog-page-1").className = "carousel-item";
+        document.getElementById("dialog-page-2").className = "carousel-item active";
+    }
+
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js');
     }

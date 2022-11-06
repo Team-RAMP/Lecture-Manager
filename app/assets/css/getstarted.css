@@ -10,10 +10,135 @@ table {
     border-bottom-width: 1px;
 }
 
+.main-input-field {
+    border-color: blue;
+    padding: 4px 6px;
+    margin: 0 4px;
+    border: 1px solid black !important;
+}
+
+.main-input-field:focus {
+    border: 1.5px solid black !important;
+}
+
 .btn{
     margin-top: 0px;
 }
+   
+.img-size{
+    height: 450px;
+    width: auto;
+    background-size: cover;
+    overflow: hidden;
+}
 
-/* tr.row100>td {
-    width: fit-content;
+.modal-content {
+    padding: 28px 28px;
+}
+
+.modal-body {
+    padding: 0;
+}
+    
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    width: 20px;
+    height: 28px;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    width: 20px;
+    height: 28px;
+}
+
+.carousel-item-content {
+    height: 300px;
+}
+
+.modal-title {
+    font-size: 32px;
+    margin-bottom: 8px;
+    user-select: none;
+}
+
+.modal-subtitle {
+    color: darkgrey;
+    user-select: none;
+}
+
+.modal-menu-item {
+    font-size: 15px;
+    margin: 2px 6px;
+    margin-top: 16px;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;    
+}
+
+input[type="checkbox"].dayschip {
+    display: none;
+}
+  
+input[type="checkbox"].dayschip + label {
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: #fff;
+    border:solid 1px #7d7d7d;
+    padding: 0.25rem 1rem;
+    margin: 4px 0;
+    display: inline-block;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[type="checkbox"].dayschip:checked + label {
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    background-color: #007bff;
+    color: white;
+    border-color:#007bff;
+}
+
+.form-control {
+    border-color: blue;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    border: 0.7px solid #7d7d7d !important;
+}
+
+.form-control:focus {
+    border: 1px solid #7d7d7d !important;
+}
+
+#days-section {
+    margin-top: 4px;
+    margin-bottom: 4px;    
+}
+
+/* .form-check-input {
+    border:solid 1px #7d7d7d;
+}
+
+.form-control {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: solid 1px #7d7d7d;
+    font-size: 14px;
+    padding: 4px 8px;
 } */
+
+.form-switch {
+    margin: 12px 0 8px 0;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
