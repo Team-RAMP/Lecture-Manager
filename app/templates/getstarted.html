@@ -33,10 +33,10 @@
 <body onload="onload()">
     <div class="limiter">
 
-        <p style="float: left; padding-left: 32px; padding-top: 16px;">
+        <!-- <p style="float: left; padding-left: 32px; padding-top: 16px;">
             <label style="display: inline-block;" for="username-field">Username: </label>
             <input style="display: inline-block;" class="main-input-field" id="username-field" type="text" />
-        </p>
+        </p> -->
 
         <div class="container-table100">
 
@@ -291,7 +291,7 @@
                                             </div>
                                             <center>
                                                 <button id="modal-proceed" style="width: 100%;" type="button"
-                                                    class="btn btn-primary">Proceed</button>
+                                                    class="btn btn-primary">Next</button>
                                             </center>
                                         </div>
                                     </div>
@@ -349,12 +349,14 @@
 
                                                     <div id="time-slot-section">
                                                         <p class="modal-menu-item">Design time slots for the new timetable</p>
-                                                        <div class="form-group">
-                                                            <input type="name" class="form-control" id="username" aria-describedby="nameHelp" placeholder="Your nickname">
-                                                            <div>
-                                                                    
-                                                                    
-                                                            </div>
+                                                        <div id="time-slot-add-sec" class="form-group">
+                                                            <input type="time" class="form-control" id="new-start-time" placeholder="Start Time" value="08:00" step="3600000">
+                                                            <input type="time" class="form-control" id="new-end-time" placeholder="End Time" value="09:00" step="3600000">
+                                                            <button type="button" class="btn btn-primary btn-sm" id="add-time-slot-button"><i class="bi bi-plus"></i> Add Time Slot</button>
+                                                            <!-- <button -->
+                                                        </div>
+                                                        <div id="time-slots-div">
+                                                            <p class="modal-subtitle">No time slots added</p>
                                                         </div>
                                                     </div>
 
@@ -368,7 +370,7 @@
                                             </div>
                                             <center>
                                                 <button id="modal-proceed-2" style="width: 100%;" type="button"
-                                                    class="btn btn-primary">Proceed</button>
+                                                    class="btn btn-primary" data-dismiss="modal">Proceed</button>
                                             </center>
                                         </div>
                                     </div>
@@ -387,7 +389,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
     <script src="vendor/bootstrap/js/popper.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>

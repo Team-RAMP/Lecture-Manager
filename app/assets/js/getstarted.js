@@ -3,21 +3,107 @@ var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
 var subjects = [];
 var start_hour = 8;
 
+var sorted_time_slots = [];
+
+// Make inserting at a certain index more readable
+Array.prototype.insert = function ( index, ...items ) {
+    this.splice( index, 0, ...items );
+};
+
 function onload() {    
 
     $('#largeModal').modal({backdrop: 'static', keyboard: false}, 'show');
 
+    const nSTField = document.getElementById("new-start-time");
+    const nETField = document.getElementById("new-end-time");
+
     document.getElementById("modal-proceed").onclick = function(e) {
-        console.log("Clicked!");
         document.getElementById("dialog-page-1").className = "carousel-item";
         document.getElementById("dialog-page-2").className = "carousel-item active";
+    }
+    
+    document.getElementById("add-time-slot-button").onclick = function (e) {
+
+        var nSTData = nSTField.value.split(":");
+        var nETData = nETField.value.split(":");
+
+        var startTime = parseInt(nSTData[0]) * 100 + parseInt(nSTData[1]);
+        var endTime = parseInt(nETData[0]) * 100 + parseInt(nETData[1]);
+
+        if (startTime > endTime) {
+            startTime += endTime;
+            endTime = startTime - endTime;
+            startTime -= endTime;
+
+            nSTField.value = nETData.join(":");
+            nETField.value = nSTData.join(":");
+        }
+
+        var insertionIndex = 0;
+
+        var ret = sorted_time_slots.some(function(time_slot) {
+            if (startTime > time_slot.startTime) return true;
+
+            if (startTime == time_slot.startTime) {
+                if (endTime > time_slot.endTime) return true;                
+                if (endTime == time_slot.endTime) {
+                    alert("Can't duplicate time slot");
+                    exit(0);                    
+                }
+            }
+
+            ++insertionIndex;
+            return false;
+        });
+
+        sorted_time_slots.insert(insertionIndex, {
+            "startTime": startTime,
+            "endTime": endTime
+        });
+
+        var time_slots_div_content = '<table style="width: 100%">';
+
+        sorted_time_slots.forEach(function(time_slot) {
+
+            var shr = ("0" + (parseInt(time_slot.startTime / 100) + 1)).slice(-2);            
+            var smin = ("0" + (parseInt(time_slot.startTime % 100))).slice(-2);
+
+            var ehr = ("0" + (parseInt(time_slot.endTime / 100) + 1)).slice(-2);            
+            var emin = ("0" + (parseInt(time_slot.endTime % 100))).slice(-2);
+
+            time_slots_div_content += `
+                <tr>
+                    <td colspan="5">${shr}:${smin} - ${ehr}:${emin}</td>
+                    <td><button style="margin: 4px" type="button" class="btn btn-danger"><i class="bi bi-trash"></i>
+                    </button></td>
+                </tr>
+            `;
+        });
+
+        time_slots_div_content += "</table>";
+
+        document.getElementById("time-slots-div").innerHTML = time_slots_div_content;
+
+        var nSTData = nSTField.value.split(":");
+        var nETData = nETField.value.split(":");
+
+        nSTData[0] = ("0" + (parseInt(nSTData[0]) + 1)).slice(-2);
+        nETData[0] = ("0" + (parseInt(nETData[0]) + 1)).slice(-2);
+
+        nSTField.value = nSTData.join(":");
+        nETField.value = nETData.join(":");
+        
+        console.log("Start Time:");
+        console.log(startTime);
+        console.log("End Time:")
+        console.log(endTime);
     }
 
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js');
     }
 
-    allInputs = document.getElementsByTagName('input');
+    allInputs = document.getElementsByClassName('subject-input');
     var dataList = document.getElementById('subjects');
 
     window.fdb = new ForerunnerDB();

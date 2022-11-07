@@ -1,5 +1,7 @@
 var start_hour = 8;
 
+var dayRef = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
 function onload() {
     const timetable_div = document.getElementById('content')
 
@@ -25,11 +27,12 @@ function construct_table(timetable_div, timetable_data) {
 
     var th = document.createElement('TH');
     tableHead.appendChild(th);
+    th.appendChild(document.createTextNode("Time/Day"));
 
     Array.prototype.forEach.call(days, function(day) {
         var th = document.createElement('TH');
         tableHead.appendChild(th);
-        th.appendChild(document.createTextNode(day));
+        th.appendChild(document.createTextNode(dayRef[parseInt(day) - 1]));
     })
   
     var tableBody = document.createElement('TBODY');
@@ -66,5 +69,9 @@ function construct_table(timetable_div, timetable_data) {
     //     tr.appendChild(td);
     //   }
     // }
-    timetable_div.appendChild(table);
+
+    var centered = document.createElement('CENTER');
+    centered.appendChild(table);
+
+    timetable_div.appendChild(centered);
 }

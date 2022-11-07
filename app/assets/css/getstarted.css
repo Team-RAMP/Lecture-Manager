@@ -111,6 +111,7 @@ input[type="checkbox"].dayschip:checked + label {
     margin-top: 4px;
     margin-bottom: 4px;
     font-size: 14px;
+    text-align: left;
     border: 0.7px solid #7d7d7d !important;
 }
 
@@ -141,4 +142,54 @@ input[type="checkbox"].dayschip:checked + label {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+#time-slot-add-sec {
+    display: flex;
+}
+
+#time-slot-add-sec > * {
+    display: inline-block;
+    margin: 4px 2px;
+    flex: 1;    
+}
+
+#time-slot-add-sec-header {
+    display: flex;
+}
+
+#time-slot-add-sec-header > * {
+    display: inline-block;
+    margin: 4px 2px;
+    flex: 1;    
+}
+
+#time-slots-div {
+    display: flex;
+    height: 150px;
+    overflow-y: scroll;
+    align-items: center;
+    justify-content: center;
+}
+
+#time-slots-div > p {
+    display: flex;
+    align-items: center;
+    overflow-y: auto;
+}
+
+table, th, td {
+    border: 0.5px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td {
+    width: 50%;
+    margin: 0 auto;
+}
+
+input {
+    text-align: center;
+    /* background-color: #4e73df; */
 }

@@ -34,7 +34,7 @@ th,td{font-weight:unset;padding-right:10px}
 .table100.ver2 .hov-column-head-ver2{background-color:#484848!important}
 .table100.ver2 .row100 td:hover{background-color:#4e73df;color:#fff}
 .table100.ver2 tbody tr:nth-child(even){background-color:white}
-.table100.ver2 td{font-family:Montserrat-Regular;font-size:14px;color: black;background-color: offwhite;line-height:1.4}
+.table100.ver2 td{font-family:Montserrat-Regular;font-size:14px;color: #4e73df;background-color: offwhite;line-height:1.4}
 .table100.ver2 th{font-family:Montserrat-Medium;font-size:12px;color:#fff;line-height:1.4;text-transform:uppercase;background-color:#4e73df}
 .table100.ver2 .row100:hover td{background-color:#4e73df;color:#fff}
 .table100.ver2 .hov-column-ver2{background-color:white;color:#fff}
